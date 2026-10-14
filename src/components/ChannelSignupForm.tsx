@@ -4,6 +4,7 @@ import { CONTACT } from '../data/content';
 import { usePiauiCities } from '../hooks/usePiauiCities';
 import { getCurrentCoords, reverseGeocode } from '../services/geolocation';
 import { findCity } from '../services/ibge';
+import { trackPixel } from '../services/metaPixel';
 import {
   buildChannelSignupMessage,
   buildWhatsAppLink,
@@ -92,6 +93,7 @@ export function ChannelSignupForm({ compact = false }: ChannelSignupFormProps) {
     if (Object.keys(nextErrors).length) return;
 
     window.open(buildWhatsAppLink(buildChannelSignupMessage(form)), '_blank', 'noopener,noreferrer');
+    trackPixel('Lead', { content_name: 'Canal WhatsApp' });
     setSent(true);
   };
 

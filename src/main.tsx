@@ -10,13 +10,16 @@ import '@fontsource/nunito/latin-800.css';
 import '@fontsource/caveat/latin-700.css';
 import './styles/global.css';
 import { App } from './App';
+import { ConsentProvider } from './context/ConsentProvider';
 
 const root = document.getElementById('root');
 
 if (root) {
   createRoot(root).render(
     <StrictMode>
-      <App />
+      <ConsentProvider>
+        <App />
+      </ConsentProvider>
     </StrictMode>,
   );
 }

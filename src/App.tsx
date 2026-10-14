@@ -1,5 +1,6 @@
 import { About } from './components/About';
 import { CastraMovel } from './components/CastraMovel';
+import { CookieBanner } from './components/CookieBanner';
 import { Education } from './components/Education';
 import { Faq } from './components/Faq';
 import { Footer } from './components/Footer';
@@ -10,8 +11,11 @@ import { Impact } from './components/Impact';
 import { Pacto } from './components/Pacto';
 import { Report } from './components/Report';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { useWhatsAppClickTracking } from './hooks/useWhatsAppClickTracking';
 
 export function App() {
+  useWhatsAppClickTracking();
+
   return (
     <>
       <a href="#conteudo" className="skip-link">
@@ -31,6 +35,7 @@ export function App() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <CookieBanner />
     </>
   );
 }

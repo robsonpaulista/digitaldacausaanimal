@@ -3,11 +3,11 @@ import react from '@vitejs/plugin-react';
 
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self'",
+  "script-src 'self' https://connect.facebook.net",
   "style-src 'self'",
-  "img-src 'self' data: https://*.cdninstagram.com https://*.fbcdn.net",
+  "img-src 'self' data: https://*.cdninstagram.com https://*.fbcdn.net https://www.facebook.com",
   "font-src 'self'",
-  "connect-src 'self' https://servicodados.ibge.gov.br https://nominatim.openstreetmap.org",
+  "connect-src 'self' https://servicodados.ibge.gov.br https://nominatim.openstreetmap.org https://www.facebook.com https://connect.facebook.net",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -53,6 +53,11 @@ function blockPrivateFiles(): Plugin {
 
 export default defineConfig({
   plugins: [react(), securityMeta(), blockPrivateFiles()],
+  build: {
+    rolldownOptions: {
+      input: ['index.html', 'privacidade.html'],
+    },
+  },
   server: {
     proxy: {
       '/api': { target: 'https://www.digitaldacausaanimal.com.br', changeOrigin: true },

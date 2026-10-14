@@ -1,11 +1,13 @@
 import { Heart, Mail, MapPin } from 'lucide-react';
-import { CONTACT, NAV_ITEMS, SERVICES } from '../data/content';
+import { CONTACT, NAV_ITEMS, PRIVACY_URL, SERVICES } from '../data/content';
+import { useConsent } from '../hooks/useConsent';
 import { buildWhatsAppLink, WHATSAPP_MESSAGES } from '../services/whatsapp';
 import { FacebookIcon, InstagramIcon, PawShape, WhatsAppIcon } from './icons';
 import './Footer.css';
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const consent = useConsent();
 
   return (
     <footer id="contato" className="footer bg-grid">
@@ -95,6 +97,14 @@ export function Footer() {
 
         <div className="footer__bottom">
           <p>© {year} Digital da Causa Animal. Todos os direitos reservados.</p>
+          <p className="footer__legal">
+            <a href={PRIVACY_URL}>Política de Privacidade</a>
+            {consent.enabled && (
+              <button type="button" onClick={consent.openPreferences}>
+                Preferências de cookies
+              </button>
+            )}
+          </p>
           <p className="footer__love">
             Feito com <Heart aria-label="amor" /> pela causa animal
           </p>

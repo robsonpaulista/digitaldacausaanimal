@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
 import { CalendarDays } from 'lucide-react';
 import { CASTRA_STEPS } from '../data/content';
+import { useInView } from '../hooks/useInView';
+import { trackPixel } from '../services/metaPixel';
 import { Highlight } from './Highlight';
 import { PawShape, Sparks } from './icons';
 import { Reveal } from './Reveal';
@@ -7,8 +10,14 @@ import { SectionHeading } from './SectionHeading';
 import './CastraMovel.css';
 
 export function CastraMovel() {
+  const [sectionRef, inView] = useInView<HTMLElement>();
+
+  useEffect(() => {
+    if (inView) trackPixel('ViewContent', { content_name: 'Busão da Castração' });
+  }, [inView]);
+
   return (
-    <section id="busao" className="section castra" aria-labelledby="castra-title">
+    <section ref={sectionRef} id="busao" className="section castra" aria-labelledby="castra-title">
       <div className="container">
         <div className="castra__top">
           <div className="castra__intro">
