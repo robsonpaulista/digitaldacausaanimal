@@ -228,15 +228,6 @@ export const HELP_OPTIONS: Feature[] = [
   },
 ];
 
-export const REPORT_SIGNS: string[] = [
-  'Abandono',
-  'Agressão física',
-  'Falta de água ou comida',
-  'Acorrentamento permanente',
-  'Envenenamento',
-  'Confinamento sem higiene',
-];
-
 export interface FaqItem {
   question: string;
   answer: string;
@@ -251,7 +242,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'A partir de qual idade posso castrar meu pet?',
     answer:
-      'Cães e gatos podem ser castrados a partir dos 4 meses de idade, desde que estejam saudáveis. A equipe veterinária faz uma avaliação antes do procedimento.',
+      'Cães e gatos podem ser castrados a partir dos 6 meses de idade, desde que estejam saudáveis. A equipe veterinária faz uma avaliação antes do procedimento.',
   },
   {
     question: 'A fêmea precisa ter uma cria antes de castrar?',
@@ -271,6 +262,6 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Como faço uma denúncia de maus-tratos?',
     answer:
-      'Pelo nosso canal de denúncias no WhatsApp: envie o endereço, a descrição e, se possível, fotos ou vídeos. Sua identidade é preservada. Em casos de flagrante, ligue 190.',
+      'Em casos de flagrante ou situação de emergência, ligue para o 190. Para formalizar a denúncia, informe o endereço completo do local, descreva a situação e relate os fatos com o máximo de detalhes possível. Se for seguro, reúna provas, como fotos ou vídeos, sem se colocar em risco. Sua identidade poderá ser preservada, caso você solicite.',
   },
 ];

@@ -60,15 +60,12 @@ export interface AreaStat {
   actions: number;
 }
 
+/** Ações em bairros somadas à zona: Mafrense → Norte; Pedra Mole e Vale Quem Tem → Leste; Promorar → Sul. */
 export const TERESINA_AREAS: AreaStat[] = [
-  { name: 'Zona Norte', pets: 1491, actions: 2 },
+  { name: 'Zona Norte', pets: 2152, actions: 3 },
+  { name: 'Zona Leste', pets: 1914, actions: 3 },
+  { name: 'Zona Sul', pets: 1392, actions: 2 },
   { name: 'Zona Sudeste', pets: 836, actions: 1 },
-  { name: 'Zona Leste', pets: 747, actions: 1 },
-  { name: 'Zona Sul', pets: 729, actions: 1 },
-  { name: 'Promorar', pets: 663, actions: 1 },
-  { name: 'Mafrense', pets: 661, actions: 1 },
-  { name: 'Vale Quem Tem', pets: 591, actions: 1 },
-  { name: 'Pedra Mole', pets: 576, actions: 1 },
 ];
 
 export const TERESINA_TOTALS = {

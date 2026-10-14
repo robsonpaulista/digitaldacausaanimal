@@ -1,7 +1,5 @@
-import { AlertTriangle, Lock, Phone, Scale } from 'lucide-react';
-import { REPORT_SIGNS } from '../data/content';
-import { buildWhatsAppLink, WHATSAPP_MESSAGES } from '../services/whatsapp';
-import { PawShape, WhatsAppIcon } from './icons';
+import { Camera, FileText, Lock, Phone } from 'lucide-react';
+import { PawShape } from './icons';
 import { Reveal } from './Reveal';
 import { Eyebrow } from './SectionHeading';
 import './Report.css';
@@ -27,32 +25,29 @@ export function Report() {
             </Reveal>
 
             <Reveal delay={140}>
-              <p className="report__lead">
-                Sua denúncia pode salvar uma vida. Envie o endereço, uma descrição e, se possível, fotos ou vídeos. Nós
-                encaminhamos aos órgãos competentes e acompanhamos o caso.
-              </p>
+              <h3 className="report__subtitle">Como fazer uma denúncia de maus&#8209;tratos?</h3>
             </Reveal>
 
-            <Reveal delay={200} as="ul" className="report__signs">
-              {REPORT_SIGNS.map((sign) => (
-                <li key={sign}>
-                  <AlertTriangle strokeWidth={2.4} />
-                  {sign}
-                </li>
-              ))}
+            <Reveal delay={180} as="ul" className="report__steps">
+              <li>
+                <Phone strokeWidth={2.4} />
+                <span>
+                  Em casos de flagrante ou situação de emergência, ligue para o <strong>190</strong>.
+                </span>
+              </li>
+              <li>
+                <FileText strokeWidth={2.3} />
+                Para formalizar a denúncia, procure informar o endereço completo do local, descrever a situação e
+                relatar os fatos com o máximo de detalhes possível.
+              </li>
+              <li>
+                <Camera strokeWidth={2.3} />
+                Se for seguro, reúna provas, como fotos ou vídeos, sem se colocar em risco.
+              </li>
             </Reveal>
 
             <Reveal delay={260} className="btn-group">
-              <a
-                href={buildWhatsAppLink(WHATSAPP_MESSAGES.report)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn--primary"
-              >
-                <WhatsAppIcon />
-                Denunciar pelo WhatsApp
-              </a>
-              <a href="tel:190" className="btn btn--outline">
+              <a href="tel:190" className="btn btn--primary">
                 <Phone strokeWidth={2.3} />
                 Flagrante? Ligue 190
               </a>
@@ -61,11 +56,7 @@ export function Report() {
             <Reveal delay={320} className="report__notes">
               <p>
                 <Lock strokeWidth={2.3} />
-                Sua identidade é preservada.
-              </p>
-              <p>
-                <Scale strokeWidth={2.3} />
-                Maus-tratos a cães e gatos é crime: reclusão de 2 a 5 anos (Lei 14.064/2020).
+                <strong>Sua identidade poderá ser preservada, caso você solicite.</strong>
               </p>
             </Reveal>
           </div>

@@ -38,7 +38,6 @@ export function isValidPhone(formatted: string): boolean {
 
 export const WHATSAPP_MESSAGES = {
   general: 'Olá! Vim pelo site da Digital da Causa Animal e gostaria de mais informações 🐾',
-  report: 'Olá! Quero fazer uma denúncia de maus-tratos a animais. Endereço/local: ',
   school: 'Olá! Gostaria de levar o projeto de educação sobre a causa animal para a minha escola. Escola/cidade: ',
   donation: 'Olá! Quero ajudar a causa animal com doação de ração 🐾',
 } as const;
