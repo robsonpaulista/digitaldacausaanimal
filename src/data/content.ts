@@ -35,7 +35,7 @@ export const CONTACT = {
   location: 'Teresina – Piauí',
 } as const;
 
-export const PRIVACY_URL = '/privacidade.html';
+export const PRIVACY_URL = '/privacidade';
 
 export interface NavItem {
   id: string;
