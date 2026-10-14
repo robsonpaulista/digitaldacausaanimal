@@ -22,7 +22,8 @@ export function HowToHelp() {
               eyebrow="Como ajudar"
               title={
                 <>
-                  Faça parte dessa <span className="text-yellow">matilha</span>
+                  Faça parte dessa <span className="text-yellow">causa!</span>{' '}
+                  <PawShape className="help__title-paw" />
                 </>
               }
               description="A causa animal se faz com muitas mãos (e patinhas). Entre no canal oficial e escolha sua forma de ajudar."

@@ -53,7 +53,7 @@ export function Header() {
 
         <a href="#ajudar" className="btn btn--yellow header__cta">
           <Heart strokeWidth={2.4} />
-          Fazer parte da matilha
+          Faça parte dessa causa! <span aria-hidden="true">🐾</span>
         </a>
 
         <button
@@ -87,7 +87,7 @@ export function Header() {
 
         <div className="mobile-menu__footer">
           <a href="#ajudar" className="btn btn--yellow btn--block" onClick={closeMenu}>
-            Quero fazer parte da matilha
+            Faça parte dessa causa! <span aria-hidden="true">🐾</span>
           </a>
           <a
             href={buildWhatsAppLink(WHATSAPP_MESSAGES.general)}

@@ -16,6 +16,15 @@
   transform: rotate(25deg);
 }
 
+.help__title-paw {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  color: var(--yellow);
+  vertical-align: -0.02em;
+  transform: rotate(18deg);
+}
+
 .help__layout {
   display: grid;
   gap: 2.5rem;

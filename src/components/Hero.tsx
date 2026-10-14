@@ -31,7 +31,7 @@ function IntroSlide() {
 
         <Reveal delay={240} className="btn-group">
           <a href="#ajudar" className="btn btn--yellow">
-            Quero fazer parte da matilha
+            Faça parte dessa causa! <span aria-hidden="true">🐾</span>
             <ArrowRight className="btn__arrow" strokeWidth={2.5} />
           </a>
           <a href="#busao" className="btn btn--ghost-light">
