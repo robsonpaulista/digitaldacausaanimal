@@ -1,0 +1,226 @@
+.castra__top {
+  display: grid;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.castra__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.castra__steps {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.castra__step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.castra__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 4.125rem;
+  left: 1.8125rem;
+  bottom: -1.3rem;
+  border-left: 2px dashed var(--blue-200);
+}
+
+.castra__step-icon {
+  position: relative;
+}
+
+.castra__step-number {
+  position: absolute;
+  top: -0.375rem;
+  right: -0.375rem;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--blue-900);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.castra__step h3 {
+  font-size: 1.12rem;
+  font-weight: 800;
+  margin: 0.2rem 0 0.25rem;
+}
+
+.castra__step p {
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+/* ---------- Mídia ---------- */
+
+.castra__media {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  padding: 0 0 2.25rem;
+}
+
+.castra__stage {
+  position: relative;
+  isolation: isolate;
+  padding: 0 14% 6% 0;
+}
+
+.castra__blob {
+  position: absolute;
+  inset: 24% 0 0;
+  z-index: -2;
+  border-radius: 58% 42% 52% 48% / 46% 54% 46% 54%;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.18), transparent 45%),
+    linear-gradient(150deg, var(--blue-500), var(--blue-800));
+  box-shadow: var(--shadow-lg);
+}
+
+.castra__blob::after {
+  content: '';
+  position: absolute;
+  inset: -0.5rem;
+  border: 2px dashed var(--blue-200);
+  border-radius: inherit;
+  transform: rotate(-3deg) scale(0.97);
+}
+
+.castra__sun {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  z-index: -3;
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe17a, var(--yellow) 60%, var(--yellow-600));
+}
+
+.castra__paw {
+  position: absolute;
+  z-index: -1;
+  color: rgba(255, 255, 255, 0.14);
+}
+
+.castra__paw--1 {
+  left: 8%;
+  bottom: 12%;
+  width: 18%;
+  transform: rotate(-18deg);
+}
+
+.castra__paw--2 {
+  right: 8%;
+  bottom: 42%;
+  width: 12%;
+  color: var(--yellow);
+  transform: rotate(16deg);
+}
+
+.castra__pets {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1.25rem 1.25rem rgba(10, 18, 99, 0.35));
+}
+
+.castra__sparks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.875rem;
+  color: var(--yellow-600);
+  transform: rotate(-70deg);
+}
+
+.castra__badge {
+  position: absolute;
+  right: 0;
+  bottom: 18%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 1rem 0.6rem 0.6rem;
+  border-radius: 1.25rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  animation: float 6s ease-in-out infinite;
+}
+
+.castra__badge .icon-tile {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.875rem;
+}
+
+.castra__badge .icon-tile svg {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.castra__badge strong,
+.castra__badge small {
+  display: block;
+  line-height: 1.2;
+}
+
+.castra__badge strong {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.castra__badge small {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.castra__hand {
+  position: absolute;
+  left: 4%;
+  bottom: 0;
+  font-size: 1.45rem;
+  color: var(--blue-600);
+  transform: rotate(-4deg);
+}
+
+@media (min-width: 560px) {
+  .castra__steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1.5rem;
+  }
+
+  .castra__step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .castra__top {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
+  }
+
+  .castra__media {
+    max-width: none;
+  }
+}

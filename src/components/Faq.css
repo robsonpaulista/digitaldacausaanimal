@@ -1,0 +1,146 @@
+.faq__grid {
+  display: grid;
+  grid-template-areas:
+    'head'
+    'list'
+    'contact';
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.faq__head {
+  grid-area: head;
+}
+
+.faq__contact {
+  grid-area: contact;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--blue-50);
+  border: 1px solid var(--line);
+}
+
+.faq__contact img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+}
+
+.faq__contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
+
+.faq__contact-body strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.faq__contact-body p {
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+}
+
+.faq__list {
+  grid-area: list;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.faq__item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    background-color 0.3s;
+}
+
+.faq__item.is-open {
+  border-color: var(--blue-200);
+  background: var(--blue-50);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq__item h3 {
+  font-size: inherit;
+}
+
+.faq__item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.2rem 1.25rem 1.2rem 1.4rem;
+  border: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-size: clamp(0.98rem, 1.6vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--blue-100);
+  color: var(--blue-600);
+  transition:
+    transform 0.4s var(--ease),
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.faq__icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.faq__item.is-open .faq__icon {
+  transform: rotate(135deg);
+  background: var(--yellow);
+  color: var(--blue-900);
+}
+
+.faq__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s var(--ease);
+}
+
+.faq__item.is-open .faq__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq__panel > div {
+  overflow: hidden;
+}
+
+.faq__panel p {
+  padding: 0 1.4rem 1.35rem;
+  color: var(--text);
+}
+
+@media (min-width: 960px) {
+  .faq__grid {
+    grid-template-areas:
+      'head list'
+      'contact list';
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-rows: auto 1fr;
+    gap: 2rem 4.5rem;
+  }
+}

@@ -1,0 +1,306 @@
+.pacto__intro {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.pacto__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pacto__paragraphs {
+  display: grid;
+  gap: 1rem;
+}
+
+.pacto__paragraphs strong {
+  color: var(--ink);
+}
+
+.pacto__partners {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pacto__partners > span {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pacto__partners ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pacto__partners li {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--blue-200);
+  border-radius: 62.4375rem;
+  background: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue-700);
+}
+
+/* ---------- Card do programa ---------- */
+
+.pacto__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(31.25rem 20rem at 100% 0%, rgba(111, 134, 255, 0.6), transparent 70%),
+    var(--blue-600);
+  color: var(--white);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.pacto__card-paw {
+  right: -2.5rem;
+  bottom: -1.875rem;
+  width: 11.875rem;
+  transform: rotate(-20deg);
+}
+
+.pacto__logo-plate {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: 0 0.75rem 1.75rem rgba(10, 18, 99, 0.25);
+}
+
+.pacto__logo {
+  width: min(15rem, 75%);
+  height: auto;
+}
+
+.pacto__launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 62.4375rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.pacto__launch svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--yellow);
+}
+
+.pacto__figures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.pacto__figures li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 0.75rem;
+  border-radius: var(--radius);
+  background: rgba(10, 18, 99, 0.28);
+}
+
+.pacto__figures strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 4vw, 1.85rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--yellow);
+}
+
+.pacto__figures span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.pacto__territories {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 22rem;
+  text-align: left;
+  line-height: 1.35;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pacto__territories svg {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--sky);
+}
+
+/* ---------- Ações e metas ---------- */
+
+.pacto__actions-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin: clamp(3.5rem, 8vw, 5rem) 0 1.5rem;
+}
+
+.pacto__actions-head .hand {
+  font-size: 1.6rem;
+  color: var(--blue-600);
+}
+
+.pacto__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.pacto__grid > .reveal {
+  display: flex;
+}
+
+.action-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 2rem 1.75rem 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition:
+    transform 0.45s var(--ease),
+    box-shadow 0.45s var(--ease),
+    border-color 0.3s;
+}
+
+.action-card:hover {
+  transform: translateY(-0.375rem);
+  border-color: var(--blue-200);
+  box-shadow: var(--shadow);
+}
+
+.action-card__number {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--blue-50);
+  -webkit-text-stroke: 1.5px var(--blue-100);
+}
+
+.action-card__icon {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.4rem;
+  transition:
+    transform 0.45s var(--ease),
+    background 0.3s;
+}
+
+.action-card__icon svg {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.action-card:hover .action-card__icon {
+  transform: rotate(-8deg) scale(1.05);
+  background: linear-gradient(145deg, #ffd85c, var(--yellow-600));
+  color: var(--blue-900);
+}
+
+.action-card h4 {
+  font-size: clamp(1.15rem, 2.2vw, 1.3rem);
+  font-weight: 800;
+}
+
+.action-card p {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.action-card--cta {
+  justify-content: center;
+  border: none;
+  background:
+    radial-gradient(25rem 16.25rem at 100% 0%, rgba(111, 134, 255, 0.6), transparent 70%),
+    var(--blue-600);
+  color: var(--white);
+  isolation: isolate;
+}
+
+.action-card--cta h4 {
+  color: var(--white);
+}
+
+.action-card--cta p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.action-card__hand {
+  font-size: 1.6rem;
+  color: var(--yellow);
+}
+
+.action-card__paw {
+  right: -2.5rem;
+  bottom: -1.875rem;
+  width: 10.625rem;
+  transform: rotate(-20deg);
+}
+
+@media (min-width: 640px) {
+  .pacto__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .pacto__intro {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pacto__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}

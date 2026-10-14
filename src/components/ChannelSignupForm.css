@@ -1,0 +1,335 @@
+.channel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: clamp(1.6rem, 4vw, 2.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(28rem 16rem at 100% 0%, rgba(111, 134, 255, 0.3), transparent 70%),
+    rgba(10, 18, 99, 0.55);
+  color: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+.channel-form h3 {
+  color: var(--white);
+}
+
+.channel-form__header p {
+  margin-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.98rem;
+}
+
+.channel-form__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ---------- Campos ---------- */
+
+.channel-form__field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.channel-form__field > span:first-child {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.channel-form__field input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.875rem;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.channel-form__field input::placeholder {
+  color: #a3a9c6;
+  font-weight: 500;
+}
+
+.channel-form__field input:focus {
+  outline: none;
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 0.25rem rgba(250, 201, 53, 0.3);
+}
+
+.channel-form__field.has-error input {
+  border-color: #ff8a8a;
+}
+
+.channel-form__field small {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffd1d1;
+}
+
+.channel-form__eyebrow {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.channel-form__full {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Telefone com DDI ---------- */
+
+.channel-form__phone {
+  display: flex;
+  align-items: stretch;
+  min-height: 3.25rem;
+  border: 2px solid transparent;
+  border-radius: 0.875rem;
+  background: var(--white);
+  overflow: hidden;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.channel-form__phone:focus-within {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 0.25rem rgba(250, 201, 53, 0.3);
+}
+
+.channel-form__field .channel-form__phone input,
+.channel-form__field .channel-form__phone input:focus {
+  min-width: 0;
+  min-height: 0;
+  padding-left: 0.75rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.channel-form__ddi {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0 0.75rem 0 0.9rem;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.channel-form__flag {
+  width: 1.4rem;
+  height: auto;
+}
+
+.channel-form__field.has-error .channel-form__phone {
+  border-color: #ff8a8a;
+}
+
+/* ---------- Cidade + localização ---------- */
+
+.channel-form__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.channel-form__locate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--yellow);
+  font: inherit;
+  font-size: 0.74rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.channel-form__locate:hover:not(:disabled) span {
+  text-decoration: underline;
+}
+
+.channel-form__locate:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.channel-form__locate:disabled {
+  cursor: progress;
+}
+
+.channel-form__locate svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.channel-form__locate.is-success {
+  color: var(--whatsapp);
+}
+
+.channel-form__locate.is-error {
+  color: #ffd1d1;
+}
+
+.channel-form .spin {
+  animation: channel-spin 0.9s linear infinite;
+}
+
+@keyframes channel-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Enviado ---------- */
+
+.channel-form--sent {
+  align-items: center;
+  justify-content: center;
+  min-height: 24rem;
+  text-align: center;
+}
+
+.channel-form--sent p {
+  max-width: 26rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.channel-form__success-icon {
+  display: grid;
+  place-items: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--blue-800);
+  animation: float 4s ease-in-out infinite;
+}
+
+.channel-form__success-icon svg {
+  width: 2.375rem;
+  height: 2.375rem;
+}
+
+.channel-form__privacy {
+  margin: -0.6rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Versão compacta ---------- */
+
+.channel-form--compact {
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.channel-form--compact .channel-form__grid {
+  gap: 0.75rem;
+}
+
+.channel-form--compact .channel-form__field > input,
+.channel-form--compact .channel-form__phone {
+  min-height: 2.875rem;
+}
+
+.channel-form--compact .channel-form__field > input {
+  padding-block: 0.6rem;
+}
+
+@media (max-width: 559px) {
+  .channel-form--compact {
+    gap: 0.8rem;
+    padding: 1.1rem;
+  }
+
+  .channel-form--compact .channel-form__eyebrow {
+    display: none;
+  }
+
+  .channel-form--compact .channel-form__privacy {
+    margin-top: -0.4rem;
+  }
+
+  .channel-form--compact .channel-form__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  .channel-form--compact .channel-form__field {
+    gap: 0.25rem;
+  }
+
+  .channel-form--compact .channel-form__field > input,
+  .channel-form--compact .channel-form__phone {
+    min-height: 2.75rem;
+  }
+
+  .channel-form--compact .channel-form__field:nth-child(-n + 2) {
+    grid-column: 1 / -1;
+  }
+
+  .channel-form--compact .channel-form__locate span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .channel-form--compact .channel-form__locate svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+.channel-form--compact.channel-form--sent {
+  gap: 0.85rem;
+  min-height: 0;
+}
+
+.channel-form--compact .channel-form__success-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.channel-form--compact .channel-form__success-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (min-width: 560px) {
+  .channel-form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

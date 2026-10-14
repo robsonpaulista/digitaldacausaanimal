@@ -1,0 +1,72 @@
+.wa-float {
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right));
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  height: 3.625rem;
+  padding: 0 1.0625rem;
+  border-radius: 62.4375rem;
+  background: var(--whatsapp);
+  color: #053b1c;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.92rem;
+  box-shadow: 0 0.875rem 1.875rem -0.625rem rgba(5, 59, 28, 0.55);
+  opacity: 0;
+  transform: translateY(1.25rem) scale(0.9);
+  pointer-events: none;
+  transition:
+    opacity 0.4s var(--ease),
+    transform 0.4s var(--ease);
+}
+
+.wa-float.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--whatsapp);
+  animation: wa-pulse 2.6s ease-out infinite;
+}
+
+.wa-float svg {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+
+.wa-float__label {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .wa-float {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    padding: 0 1.375rem 0 1.125rem;
+  }
+
+  .wa-float__label {
+    display: inline;
+  }
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}

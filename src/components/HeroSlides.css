@@ -1,0 +1,302 @@
+.hero-slide__title {
+  font-size: clamp(2.1rem, 5.6vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.hero-slide__title .text-yellow {
+  display: block;
+}
+
+/* ---------- Comunidade ---------- */
+
+.hs-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.875rem;
+  padding: 0.55rem 1.1rem 0.55rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 62.4375rem;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  transition:
+    background-color 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.hs-social a:hover {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  color: var(--blue-900);
+}
+
+.hs-social svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hs-form {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 559px) {
+  .hs-social a {
+    min-height: 2.625rem;
+    padding-block: 0.45rem;
+  }
+}
+
+/* ---------- Números ---------- */
+
+.hs-numbers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-numbers__card,
+.hs-panel {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  background: rgba(10, 18, 99, 0.28);
+  box-shadow: 0 1.25rem 2.5rem rgba(10, 18, 99, 0.25);
+  backdrop-filter: blur(0.5rem);
+}
+
+.hs-numbers__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  padding: 1rem;
+}
+
+.hs-numbers__card .icon-tile {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.45rem;
+  border-radius: 0.8rem;
+}
+
+.hs-numbers__card .icon-tile svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hs-numbers__card strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.4vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--white);
+}
+
+.hs-numbers__label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--yellow);
+}
+
+.hs-numbers__card small {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- Painéis (cidades e bairros) ---------- */
+
+.hs-panel {
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1.1rem;
+}
+
+.hs-panel__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hs-panel__title svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--yellow);
+}
+
+.hs-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-cities li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 62.4375rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hs-cities strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--yellow);
+}
+
+.hs-cities li.is-top {
+  background: var(--yellow);
+  color: var(--blue-900);
+  font-weight: 700;
+}
+
+.hs-cities li.is-top strong {
+  color: var(--blue-700);
+}
+
+.hs-panel__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.22);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hs-panel__note svg {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.05rem;
+  color: var(--yellow);
+}
+
+.hs-areas {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-areas li {
+  display: grid;
+  grid-template-columns: 7.25rem minmax(0, 1fr) 3.25rem;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+}
+
+.hs-areas__name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.hs-areas__name small {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--yellow);
+}
+
+.hs-areas__bar {
+  height: 0.6rem;
+  border-radius: 62.4375rem;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.hs-areas__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--yellow-600), var(--yellow));
+  transform-origin: left center;
+}
+
+.hero__slide.is-active .hs-areas__bar span {
+  animation: hs-grow 0.9s var(--ease) both;
+}
+
+.hs-areas li strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-align: right;
+  color: var(--white);
+}
+
+@keyframes hs-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (min-width: 560px) {
+  .hs-numbers {
+    gap: 1rem;
+  }
+
+  .hs-numbers__card {
+    padding: 1.25rem;
+  }
+
+  .hs-panel {
+    padding: 1.4rem;
+  }
+
+  .hs-cities li {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .hs-numbers,
+  .hs-panel,
+  .hs-form {
+    margin-right: 0;
+  }
+}

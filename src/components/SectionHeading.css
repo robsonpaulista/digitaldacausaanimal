@@ -1,0 +1,28 @@
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 40rem;
+}
+
+.section-heading > .eyebrow {
+  align-self: flex-start;
+}
+
+.section-heading--center > .eyebrow {
+  align-self: center;
+}
+
+.section-heading--center {
+  align-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading--light h2 {
+  color: var(--white);
+}
+
+.section-heading--light .lead {
+  color: rgba(255, 255, 255, 0.78);
+}
