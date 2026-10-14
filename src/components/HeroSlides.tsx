@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
-import { ArrowRight, Cat, Dog, MapPinned, Route, Users, Venus } from 'lucide-react';
+import { ArrowRight, Cat, Dog, MapPinned, Play, Route, Users, Venus } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { useInstagramPosts } from '../hooks/useInstagramPosts';
+import type { InstagramMediaType, InstagramPost } from '../services/instagram';
 import {
   BUSAO_HUB_CITIES,
   BUSAO_PERIOD,
@@ -77,7 +79,64 @@ function SlideText({ eyebrow, title, lead, children }: SlideTextProps) {
   );
 }
 
+const MEDIA_LABEL: Record<InstagramMediaType, string> = {
+  image: 'Foto',
+  video: 'Vídeo',
+  album: 'Álbum',
+};
+
+function SocialLinks() {
+  return (
+    <ul className="hs-social" aria-label="Redes sociais">
+      <li>
+        <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${CONTACT.instagramLabel}`}>
+          <InstagramIcon strokeWidth={2.2} />
+          Instagram
+        </a>
+      </li>
+      <li>
+        <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer">
+          <FacebookIcon strokeWidth={2.2} />
+          Facebook
+        </a>
+      </li>
+    </ul>
+  );
+}
+
+function InstagramStrip({ posts }: { posts: InstagramPost[] }) {
+  return (
+    <ul className="hs-insta" aria-label="Últimas publicações e redes sociais">
+      {posts.map(({ id, caption, type, image, permalink }) => (
+        <li key={id} className="hs-insta__post">
+          <a
+            href={permalink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${MEDIA_LABEL[type]} no Instagram${caption ? `: ${caption.slice(0, 90)}` : ''}`}
+          >
+            <img src={image} alt="" width={120} height={120} loading="lazy" decoding="async" />
+            {type === 'video' && <Play className="hs-insta__play" strokeWidth={2.6} aria-hidden="true" />}
+          </a>
+        </li>
+      ))}
+      <li className="hs-insta__social hs-insta__social--instagram">
+        <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label={`Seguir ${CONTACT.instagramLabel} no Instagram`}>
+          <InstagramIcon strokeWidth={2.2} />
+        </a>
+      </li>
+      <li className="hs-insta__social">
+        <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Seguir no Facebook">
+          <FacebookIcon strokeWidth={2.2} />
+        </a>
+      </li>
+    </ul>
+  );
+}
+
 export function CommunitySlide() {
+  const posts = useInstagramPosts();
+
   return (
     <div className="hero__grid">
       <SlideText
@@ -94,20 +153,7 @@ export function CommunitySlide() {
           </>
         }
       >
-        <ul className="hs-social" aria-label="Redes sociais">
-          <li>
-            <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${CONTACT.instagramLabel}`}>
-              <InstagramIcon strokeWidth={2.2} />
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer">
-              <FacebookIcon strokeWidth={2.2} />
-              Facebook
-            </a>
-          </li>
-        </ul>
+        {posts.length ? <InstagramStrip posts={posts} /> : <SocialLinks />}
       </SlideText>
 
       <div className="hs-form">
