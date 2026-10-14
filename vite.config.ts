@@ -53,4 +53,9 @@ function blockPrivateFiles(): Plugin {
 
 export default defineConfig({
   plugins: [react(), securityMeta(), blockPrivateFiles()],
+  server: {
+    proxy: {
+      '/api': { target: 'https://www.digitaldacausaanimal.com.br', changeOrigin: true },
+    },
+  },
 });
