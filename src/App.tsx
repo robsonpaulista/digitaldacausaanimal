@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { HowToHelp } from './components/HowToHelp';
 import { Impact } from './components/Impact';
+import { InstagramFeed } from './components/InstagramFeed';
 import { Pacto } from './components/Pacto';
 import { Report } from './components/Report';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
@@ -28,6 +29,7 @@ export function App() {
         <Education />
         <HowToHelp />
         <Faq />
+        <InstagramFeed />
       </main>
       <Footer />
       <WhatsAppFloat />

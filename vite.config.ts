@@ -5,7 +5,7 @@ const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self'",
-  "img-src 'self' data:",
+  "img-src 'self' data: https://*.cdninstagram.com https://*.fbcdn.net",
   "font-src 'self'",
   "connect-src 'self' https://servicodados.ibge.gov.br https://nominatim.openstreetmap.org",
   "object-src 'none'",
